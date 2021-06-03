@@ -1,0 +1,117 @@
+public class HighandLow {
+	public static void main (String[] args) throws Exception {
+		
+	
+
+//初期化・変数の準備
+	//タイトル
+	String title = "High & Low!";
+	//ルール
+	String [] rule = {
+		"１，表示されるカードより大きいか（High）小さいか(Low）選んでください",
+		"２，大きいと思うときは１、小さいと思うときは２を入力してください",
+		"３，同じ数字だった場合は引き分けです",
+		"４，挑戦は一回だけ！"
+	};
+
+
+	//カードのマーク（親）
+	int mainMark  = (new java.util.Random().nextInt(4)) + 1;
+		//1=ハート 2=ダイヤ 3=クローバー 4=スペード
+	//カードの数字（親）
+	int mainNum = (new java.util.Random().nextInt(13)) + 1;
+	//親カードの選定
+	String mainCard = "親カードは";
+	switch (mainMark) {
+		case 1:
+			mainCard += "ハートの" + mainNum;
+			break;
+		case 2:
+			mainCard += "ダイヤの" + mainNum;
+			break;
+		case 3:
+			mainCard += "クローバーの" + mainNum;
+			break;
+		case 4:
+			mainCard += "スペードの" + mainNum;
+			break;
+	}
+
+	//子カードの選定
+	//カードのマーク（子）
+	int subMark  = (new java.util.Random().nextInt(4)) + 1;
+		//1=ハート 2=ダイヤ 3=クローバー 4=スペード
+	//カードの数字（子）
+	int subNum = (new java.util.Random().nextInt(13)) + 1;
+	//親カードの選定
+	String subCard = "子カードは";
+	switch (subMark) {
+		case 1:
+			subCard += "ハートの" + subNum + "でした";
+			break;
+		case 2:
+			subCard += "ダイヤの" + subNum + "でした";
+			break;
+		case 3:
+			subCard += "クローバーの" + subNum + "でした";
+			break;
+		case 4:
+			subCard += "スペードの" + subNum + "でした";
+			break;
+	}
+
+	//判定用変数
+	int check = 0;
+		//1子カードが大きい　2親カードが大きい　3同じ
+
+/*装飾用区切り*/ System.out.println("----------------------------");
+//タイトルの出力
+	System.out.println(title);
+/*装飾用区切り*/ System.out.println("----------------------------");
+//ルールの出力
+	for (String r : rule) {
+		System.out.println(r);
+	}
+/*装飾用区切り*/ System.out.println("----------------------------");
+
+//親カードの出力
+	System.out.println(mainCard);
+//質問の出力
+	System.out.print("High(1) or Low(2)?　>>> ");
+
+//HIGH or LOWの入力
+	int ans = new java.util.Scanner(System.in).nextInt();
+/*装飾用区切り*/ System.out.println("----------------------------");
+
+//<３秒待つ
+	System.out.println("・");
+	Thread.sleep(1000L);
+	System.out.println("・");
+	Thread.sleep(1000L);
+	System.out.println("・");
+	Thread.sleep(1000L);
+//HIGH or LOWの判定
+	if (mainNum < subNum) {
+		check = 1;
+	} else if (mainNum > subNum) {
+		check = 2;
+	} else if (mainNum == subNum) {
+		check = 3;
+	}
+
+	if (check == 3) {
+		System.out.println("珍しい！引き分け");
+	}  else if (check == ans) {
+		System.out.println("おめでとう！勝ち");
+	} else {
+		System.out.println("残念！負け");
+	}
+/*装飾用区切り*/ System.out.println("----------------------------");
+
+//結果の出力
+//子カードの出力
+	System.out.println(subCard);
+/*装飾用区切り*/ System.out.println("----------------------------");
+
+}
+}
