@@ -20,8 +20,6 @@ public class CodeBreaker {
 	int hit = 0;
 	//ブロー数
 	int blow = 0;
-	//チャレンジ回数
-	// int count = 0;
 
 //答えの生成
 	//ans[0][1][2]に被りなく３つの整数をランダムで入れる
@@ -56,39 +54,6 @@ public class CodeBreaker {
 	System.out.println("--------");
 
 
-//入力した数字の保持
-	// System.out.println("１つめの数字を入力してください");
-	// num[0] = new java.util.Scanner(System.in).nextInt();
-
-	// System.out.println("２つめの数字を入力してください");
-	// num[1] = new java.util.Scanner(System.in).nextInt();
-
-	// System.out.println("３つめの数字を入力してください");
-	// num[2] = new java.util.Scanner(System.in).nextInt();
-	
-
-	//チェック用出力（num）
-	// System.out.println("num-----");
-	// for (int n : num) {
-	// 	System.out.println(n);
-	// }
-	// System.out.println("--------");
-
-//ヒット・ブロウの判定
-	//同じ配列インデックス&同じ値であればヒット、同じ値であればブロー
-	// for (int i = 0; i < ans.length; i++) {
-	// 	for (int j = 0; j < ans.length; j++) {
-	// 		if (ans[i] == num[j] && i == j) {
-	// 			hit++;
-	// 		} else if (ans[i] == num[j]) {
-	// 			blow++;
-	// 		}
-	// 	}
-	// }
-
-	//チェック用出力（hit,blow）
-	// System.out.println("ヒット数: " + hit);
-	// System.out.println("ブロー数: " + blow);
 //ゲームクリアの判定
 	for (int count = 1; hit < 3; count++) {
 		hit = 0;
